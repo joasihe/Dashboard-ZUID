@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Bar from 'components/Bar';
+import Pie from 'components/Pie';
+import Csat from 'components/Csat'
 
 function App() {
   return (
