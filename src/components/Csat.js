@@ -1,12 +1,56 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect } from 'react';
+import GaugeChart from 'react-gauge-chart';
 
-const Csat = () => {
-    const [CsatNumber, setCsatNumber] = useState('12');
+
+function CsatMeter() {
+    const [Csat, setCsat] = useState(2);
+    const [Sentence, setSentence] = useState('bo');
+  
+    const csatToPercentage = (number) => {
+      if (number > 5) {
+        number = 5;
+      }
+      let percentage = number / 5;
+      return percentage;
+    }
+  
+    const percentageToCsat = (percentage) => {
+      let CsatScore = percentage / 20;
+      setCsat(CsatScore);
+      return CsatScore;
+    }
+  
+    const handleSentence = (number) => {
+      if (number < 3) {
+        setSentence('kankerslecht');
+      }
+      else {
+        setSentence('pffff');
+      }
+    }
+  
+  
     return (
-        <div>
-            <h1>CSAT: {CsatNumber}</h1>
-        </div>
+      <div className="App">
+        <header className="App-header">
+          <GaugeChart id="gauge-chart5"
+            nrOfLevels={3}
+            arcsLength={[0.4, 0.4, 0.2]}
+            colors={['#E40133', '#003752', '#94D4ED']}
+            percent={csatToPercentage(3)}
+            arcPadding={0.02}
+            formatTextValue={value => percentageToCsat(value) +''}
+            // needleColor={'#FFED00'}
+            // needleBaseColor={'#FFED00'}
+            textColor={'#464A4F'}
+          />
+          <p>{Sentence}</p>
+          <button onClick={() => handleSentence(5)}>Klik hier</button>
+          
+        </header>
+        
+      </div>
     );
-};
-
-export default Csat;
+  }
+  
+  export default CsatMeter;
