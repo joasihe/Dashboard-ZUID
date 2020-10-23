@@ -1,5 +1,20 @@
 html {
-  overflow: hidden;
-  height: 100%;
-  background-color: rgb(252, 252, 252);
+  background-color: #f4f4f4;
+}
+
+body {
+  font-family: BarlowCondensed-SemiBold;
+  color: #707070 !important;
+}
+
+/* h2 {
+  font-family: BarlowCondensed-SemiBold;
+} */
+
+.app-bar {
+  margin-bottom: 50px;
+}
+
+.padding-container {
+  padding: 2em 3em 3em 3em;
 }

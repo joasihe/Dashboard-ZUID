@@ -5,7 +5,6 @@ import {
   ArgumentAxis,
   ValueAxis,
   BarSeries,
-  Title,
   Legend,
 } from '@devexpress/dx-react-chart-material-ui';
 import { withStyles } from '@material-ui/core/styles';
@@ -34,35 +33,35 @@ const legendLabelBase = ({ classes, ...restProps }) => (
 );
 const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabelBase);
 
-export const data = [{
-  name: 'Lange Frans',
-  target: 300,
-  forecast: 80,
-}];
-
 export default class Bar extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      data,
-    };
+      data: [{
+          name: '',
+          target: props.target,
+          forecast: props.forecast
+      }]
+    }
   }
 
   render() {
     const { data: chartData } = this.state;
 
       return (
-        <Card variant="outlined">
+        <Card>
+          <div className={'padding-container'}>
+          <h2>Target vs. forecast</h2>
         <Chart
           data={chartData}
         >
           <ArgumentAxis />
           <ValueAxis />
 
-          <BarSeries
-            name="Target"
-            valueField="target"
+            <BarSeries
+              name="Target"
+              valueField='target'
             argumentField="name"
             color="#94D4ED"
           />
@@ -74,9 +73,10 @@ export default class Bar extends React.PureComponent {
           />
           <Animation />
           <Legend position="bottom" rootComponent={Root} labelComponent={Label} />
-          <Title text="Target vs. Forecast" />
+
           <Stack />
-              </Chart>
+            </Chart>
+            </div>
               </Card>
     );
   }

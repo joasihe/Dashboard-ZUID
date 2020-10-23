@@ -3,10 +3,10 @@ import Card from '@material-ui/core/Card';
 import {
   Chart,
   PieSeries,
-  Title,
+  Tooltip,
 } from '@devexpress/dx-react-chart-material-ui';
-
 import { Animation } from '@devexpress/dx-react-chart';
+import { EventTracker } from '@devexpress/dx-react-chart';
 
 const data = [
   { country: 'Russia', area: 90 },
@@ -24,21 +24,24 @@ export default class Demo extends React.PureComponent {
   render() {
     const { data: chartData } = this.state;
 
-      return (
-        <Card variant='outlined'>
+    return (
+      <Card>
+        <div className={'padding-container'}>
+          <h2>Productiviteit</h2>
         <Chart
-          data={chartData}
+            data={chartData}
+            classname={'chart'}
         >
           <PieSeries
             valueField="area"
             argumentField="country"
           />
-          <Title className='test'
-            text="Productiviteit"
-          />
           <Animation />
-              </Chart>
-              </Card>
+          <EventTracker />
+          <Tooltip />
+          </Chart>
+          </div>
+</Card>
     );
   }
 }
