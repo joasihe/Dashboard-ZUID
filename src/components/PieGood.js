@@ -16,7 +16,7 @@ function PieChart() {
   });
 
   const data = {
-    labels: ["Gewerkt", "Niet gewerkt"],
+    labels: ["Intern", "Declarabel"],
     datasets: [
       {
         data: [percentage, other],

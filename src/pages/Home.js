@@ -19,9 +19,10 @@ const MainWrapper = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: space-between;
+  flex-direction: space-between !important;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: flex-start;
+  height: 40%;
 `;
 
 const BarWrapper = styled.div`
@@ -42,7 +43,11 @@ const NumbersWrapper = styled.div`
 `;
 
 const CsatWrapper = styled.div`
-  width: 20%;
+  width: 25%;
+`;
+
+const CsatHeight = styled.div`
+  height: 100%;
 `;
 
 function Home() {
@@ -78,17 +83,19 @@ function Home() {
           </PieWrapper>
           <CsatWrapper>
             <Card>
-              <div className={"padding-container"}>
-                <h2>CSAT</h2>
-                <Csat csat={csat} />
-              </div>
+              <CsatHeight>
+                <div className={"padding-container"}>
+                  <h2>CSAT</h2>
+                  <Csat csat={csat} />
+                </div>
+              </CsatHeight>
             </Card>
           </CsatWrapper>
         </Wrapper>
         <NumbersWrapper>
           <Card>
             <div className={"padding-container"}>
-              <h2>Pipelinebulletzooi</h2>
+              <h2>Uitstaande Offertes</h2>
               <Pipeline pipeline={pipeline} />
             </div>
           </Card>
