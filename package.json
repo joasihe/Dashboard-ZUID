@@ -1,6 +1,7 @@
 {
   "name": "dashboard",
   "version": "0.1.0",
+  "homepage": "http://i416427.hera.fhict.nl/sites/zuid/",
   "private": true,
   "dependencies": {
     "@devexpress/dx-react-chart": "^2.7.2",

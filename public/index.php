@@ -6,21 +6,16 @@
 
 <?php if ($_POST) : ?>
 
-    in php is het dit:
-    <?php var_dump($_POST); ?>
-    <br>
-    <br>
-    <br>
-
-    in json dit:
     <?php $formToJson = json_encode($_POST); ?>
     <?php file_put_contents('test.json', $formToJson); ?>
 
     <br>
     <br>
 
-    <b>opgeslagen in test.json</b>
-
+    <b>Opgeslagen!</b>
+    <?php
+header( 'Location: http://www.i416427.hera.fhict.nl/sites/zuid/' );
+die(); ?>
 <?php endif; ?>
 
 <h1>Wijzigen</h1>
@@ -36,11 +31,11 @@
     </div>
     <div>
         <input type="text" name="percentage" id="productiviteit-input" />
-        <label>Productiviteit</label>
+        <label>Productiviteit (in percentage)</label>
     </div>
     <div>
         <input type="text" name="csat" id="csat-input" />
-        <label>CSAT</label>
+        <label>CSAT (1 tot 5)</label>
     </div>
     <div>
         <input type="text" name="pipeline" id="pipeline-input" />

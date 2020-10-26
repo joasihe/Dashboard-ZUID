@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Bar from "../components/Bar.js";
 import VerticalBar from "../components/BarGood";
 import PieChart from "../components/PieGood";
-import Pie from "../components/Pie.js";
 import Pipeline from "../components/Pipeline";
 import Csat from "../components/Csat";
 import "../assets/style/style.css";
 import styled from "styled-components";
-import { Card, AppBar, Toolbar, TextField } from "@material-ui/core";
+import { Card, AppBar, Toolbar } from "@material-ui/core";
 
 import axios from "axios";
 
@@ -66,7 +64,7 @@ function Home() {
       <AppBar style={{ background: "#003752" }} className={"app-bar"}>
         <Toolbar>
           <img width="150px" src="http://brandbook.byzuid.com/wp-content/uploads/2019/11/logo_ZUIDcreatives_rgb_white_transp.png" alt="" />
-          <h2>Digital Performance Dashboard</h2>
+          <h2><a href='./index.php'>Digital Performance Dashboard </a></h2>
         </Toolbar>
       </AppBar>
       <MainWrapper>

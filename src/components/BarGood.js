@@ -29,6 +29,7 @@ function VerticalBar() {
     labels: ["Target", "Forecast"],
     datasets: [
       {
+        label: 'in €',
         data: [target, forecast],
         backgroundColor: ["#003752", "#94D4ED"],
         borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
