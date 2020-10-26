@@ -1,23 +1,22 @@
-import * as React from 'react';
-import Card from '@material-ui/core/Card';
-import {
-  Chart,
-  PieSeries,
-  Tooltip,
-} from '@devexpress/dx-react-chart-material-ui';
-import { Animation } from '@devexpress/dx-react-chart';
-import { EventTracker } from '@devexpress/dx-react-chart';
+import * as React from "react";
+import Card from "@material-ui/core/Card";
+import { Chart, PieSeries, Tooltip } from "@devexpress/dx-react-chart-material-ui";
+import { Animation } from "@devexpress/dx-react-chart";
+import { EventTracker } from "@devexpress/dx-react-chart";
 
-const data = [
-  { country: 'Russia', area: 90 },
-  { country: 'Canada', area: 10 },
-];
+const calculatorFunction = (number) => {
+  return 100 - number;
+};
+
 export default class Demo extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      data,
+      data: [
+        { country: "Russia", area: props.percentage },
+        { country: "Canada", area: calculatorFunction(props.percentage) },
+      ],
     };
   }
 
@@ -26,22 +25,16 @@ export default class Demo extends React.PureComponent {
 
     return (
       <Card>
-        <div className={'padding-container'}>
+        <div className={"padding-container"}>
           <h2>Productiviteit</h2>
-        <Chart
-            data={chartData}
-            classname={'chart'}
-        >
-          <PieSeries
-            valueField="area"
-            argumentField="country"
-          />
-          <Animation />
-          <EventTracker />
-          <Tooltip />
+          <Chart data={chartData} classname={"chart"}>
+            <PieSeries valueField="area" argumentField="country" />
+            <Animation />
+            <EventTracker />
+            <Tooltip />
           </Chart>
-          </div>
-</Card>
+        </div>
+      </Card>
     );
   }
 }
