@@ -36,7 +36,7 @@ const PieWrapper = styled.div`
 
 const NumbersWrapper = styled.div`
   margin-top: 30px;
-  width: 92%;
+  width: 71%;
   height: 10%;
 `;
 
