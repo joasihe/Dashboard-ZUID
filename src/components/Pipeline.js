@@ -12,7 +12,7 @@ const Pipeline = (props) => {
   return (
     <div>
       <h1>Uitstaande offertes: {props.pipeline}</h1>
-      <h1>Slagingspercentage: {Bullet}%</h1>
+      <h1>Slagingspercentage: {Bullet}</h1>
     </div>
   );
 };
