@@ -1,14 +1,13 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import Home from "./pages/Home";
-import './assets/style/style.css';
+import Login from "./components/Login";
+import "./assets/style/style.css";
 
 class App extends React.Component {
   render() {
-    return (
-      <Home/>
-    );
-}
+    return <Login />;
+  }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));

@@ -64,7 +64,9 @@ function Home() {
       <AppBar style={{ background: "#003752" }} className={"app-bar"}>
         <Toolbar>
           <img width="150px" src="http://brandbook.byzuid.com/wp-content/uploads/2019/11/logo_ZUIDcreatives_rgb_white_transp.png" alt="" />
-          <h2><a href='./index.php'>Digital Performance Dashboard </a></h2>
+          <h2>
+            <a href="./index.php">Digital Performance Dashboard </a>
+          </h2>
         </Toolbar>
       </AppBar>
       <MainWrapper>
