@@ -10,42 +10,34 @@ import { Card, AppBar, Toolbar } from "@material-ui/core";
 import axios from "axios";
 
 const MainWrapper = styled.div`
-  padding-left: 3em;
-  margin-top: 8em;
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+`;
+
+const StackedWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  justify-content: space-around;
   height: 50%;
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: space-between !important;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  height: 40%;
-`;
-
 const BarWrapper = styled.div`
-  margin-right: 30px;
   width: 40%;
-  height: 30%;
 `;
 
 const PieWrapper = styled.div`
-  margin-right: 30px;
   width: 30%;
 `;
 
-const NumbersWrapper = styled.div`
-  margin-top: 30px;
-  width: 71%;
-  height: 10%;
-`;
+const NumbersWrapper = styled.div``;
 
 const CsatWrapper = styled.div`
-  width: 25%;
-`;
-
-const CsatHeight = styled.div`
-  height: 100%;
+  margin-bottom: 30px;
 `;
 
 function Home() {
@@ -70,36 +62,30 @@ function Home() {
         </Toolbar>
       </AppBar>
       <MainWrapper>
-        <Wrapper>
-          <BarWrapper>
-            <VerticalBar />
-
-            {/* <Bar target={20} forecast={forecast} /> */}
-          </BarWrapper>
-
-          <PieWrapper>
-            {/* <Pie percentage={percentage} /> */}
-            <PieChart />
-          </PieWrapper>
+        <BarWrapper>
+          <VerticalBar />
+        </BarWrapper>
+        <PieWrapper>
+          <PieChart />
+        </PieWrapper>
+        <StackedWrapper>
           <CsatWrapper>
             <Card>
-              <CsatHeight>
-                <div className={"padding-container"}>
-                  <h2>CSAT</h2>
-                  <Csat csat={csat} />
-                </div>
-              </CsatHeight>
+              <div className={"padding-container"}>
+                <h2>CSAT</h2>
+                <Csat csat={csat} />
+              </div>
             </Card>
           </CsatWrapper>
-        </Wrapper>
-        <NumbersWrapper>
-          <Card>
-            <div className={"padding-container"}>
-              <h2>Uitstaande Offertes</h2>
-              <Pipeline pipeline={pipeline} />
-            </div>
-          </Card>
-        </NumbersWrapper>
+          <NumbersWrapper>
+            <Card>
+              <div className={"padding-container"}>
+                <h2>Uitstaande Offertes</h2>
+                <Pipeline pipeline={pipeline} />
+              </div>
+            </Card>
+          </NumbersWrapper>
+        </StackedWrapper>
       </MainWrapper>
     </>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Pie } from "@reactchartjs/react-chart.js";
 import axios from "axios";
 import Card from "@material-ui/core/Card";
-import 'chartjs-plugin-datalabels';
+import "chartjs-plugin-datalabels";
 
 function PieChart() {
   const [percentage, setPercentage] = useState(90);
@@ -29,20 +29,35 @@ function PieChart() {
   };
 
   const options = {
+    legend: {
+      labels: {
+        fontFamily: "BarlowCondensed-SemiBold",
+        fontSize: 24,
+      },
+    },
+    tooltips: { enabled: false },
     responsive: true,
     plugins: {
       datalabels: {
-        color: '#fff'
-      }
-    }
-  }
+        color: "#fff",
+        labels: {
+          title: {
+            font: {
+              fontFamily: "BarlowCondensed-SemiBold",
+              size: "40",
+            },
+          },
+        },
+      },
+    },
+  };
 
   return (
     <>
       <Card>
         <div className={"padding-container"}>
           <h2>Productiviteit</h2>
-          <Pie data={data} width={100} height={83} options={options}/>
+          <Pie data={data} width={100} height={83} options={options} />
         </div>
       </Card>
     </>

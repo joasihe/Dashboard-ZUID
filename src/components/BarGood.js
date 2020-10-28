@@ -3,12 +3,25 @@ import { Bar } from "@reactchartjs/react-chart.js";
 import axios from "axios";
 import { Card } from "@material-ui/core";
 const options = {
+  legend: {
+    display: false,
+  },
   tooltips: { enabled: false },
   scales: {
     yAxes: [
       {
         ticks: {
           beginAtZero: true,
+          fontSize: "18",
+        },
+      },
+    ],
+    xAxes: [
+      {
+        ticks: {
+          fontFamily: "BarlowCondensed-SemiBold",
+          fontSize: 30,
+          color: "black",
         },
       },
     ],
@@ -30,7 +43,6 @@ function VerticalBar() {
     labels: ["Target", "Forecast"],
     datasets: [
       {
-        label: "in €",
         data: [target, forecast],
         backgroundColor: ["#003752", "#94D4ED"],
         borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
@@ -40,7 +52,6 @@ function VerticalBar() {
   };
   return (
     <>
-      {" "}
       <Card>
         <div className={"padding-container"}>
           <h2>Target vs Forecast</h2>

@@ -19,7 +19,7 @@ const GeoLocation = () => {
     }
   };
 
-  return <>{access ? <Home /> : <button onClick={check}>Login</button>}</>;
+  return <>{access ? <Home /> : <button onClick={check}>Log in</button>}</>;
 };
 
 export default GeoLocation;
