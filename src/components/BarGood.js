@@ -3,6 +3,7 @@ import { Bar } from "@reactchartjs/react-chart.js";
 import axios from "axios";
 import { Card } from "@material-ui/core";
 const options = {
+  tooltips: { enabled: false },
   scales: {
     yAxes: [
       {
@@ -29,7 +30,7 @@ function VerticalBar() {
     labels: ["Target", "Forecast"],
     datasets: [
       {
-        label: 'in €',
+        label: "in €",
         data: [target, forecast],
         backgroundColor: ["#003752", "#94D4ED"],
         borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
