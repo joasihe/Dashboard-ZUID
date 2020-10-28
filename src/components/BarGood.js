@@ -3,6 +3,22 @@ import { Bar } from "@reactchartjs/react-chart.js";
 import axios from "axios";
 import { Card } from "@material-ui/core";
 const options = {
+  plugins: {
+    datalabels: {
+      color: "#fff",
+      formatter: function(value){
+        return '€' + value;
+      },
+      labels: {
+        title: {
+          font: {
+            fontFamily: "BarlowCondensed-SemiBold",
+            size: "40",
+          },
+        },
+      },
+    },
+  },
   legend: {
     display: false,
   },
@@ -29,8 +45,8 @@ const options = {
 };
 
 function VerticalBar() {
-  const [target, setTarget] = useState("");
-  const [forecast, setForecast] = useState("");
+  const [target, setTarget] = useState(100);
+  const [forecast, setForecast] = useState(200);
 
   useEffect(() => {
     axios.get("test.json").then(function (response) {
@@ -40,6 +56,7 @@ function VerticalBar() {
   });
 
   const data = {
+    label: 'in €',
     labels: ["Target", "Forecast"],
     datasets: [
       {

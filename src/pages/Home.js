@@ -10,6 +10,7 @@ import { Card, AppBar, Toolbar } from "@material-ui/core";
 import axios from "axios";
 
 const MainWrapper = styled.div`
+  margin-top: 8em;
   height: 80vh;
   display: flex;
   justify-content: space-around;

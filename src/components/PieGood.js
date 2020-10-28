@@ -44,7 +44,7 @@ function PieChart() {
           title: {
             font: {
               fontFamily: "BarlowCondensed-SemiBold",
-              size: "40",
+              size: "32",
             },
           },
         },
