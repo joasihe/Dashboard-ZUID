@@ -45,7 +45,7 @@ const options = {
 };
 
 function VerticalBar() {
-  const [target, setTarget] = useState(100);
+  const [target, setTarget] = useState(12000);
   const [forecast, setForecast] = useState(200);
 
   useEffect(() => {
