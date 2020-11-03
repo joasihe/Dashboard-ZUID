@@ -13,7 +13,7 @@ const GeoLocation = () => {
 
   const check = () => {
     // 217.100.231.170
-    if (details.IPv4 === "145.132.225.95") {
+    if (details.IPv4 === "217.100.231.170") {
       setAccess(true);
     } else {
       alert("helaas pindakaas");
