@@ -3,8 +3,7 @@ import VerticalBar from "../components/BarGood";
 import PieChart from "../components/PieGood";
 import Pipeline from "../components/Pipeline";
 import Csat from "../components/Csat";
-import Offerte from "../components/Offertes";
-import EditableLabel from "react-inline-editing";
+import Notes from "../components/Notes";
 import "../assets/style/style.css";
 import styled from "styled-components";
 import { Card, AppBar, Toolbar } from "@material-ui/core";
@@ -37,6 +36,10 @@ const PieWrapper = styled.div`
   width: 30%;
 `;
 
+const NotesWrapper = styled.div`
+  width: 20%;
+`;
+
 const NumbersWrapper = styled.div``;
 
 const CsatWrapper = styled.div`
@@ -54,16 +57,6 @@ function Home() {
     setPipeline(response.data.pipeline);
     setOffertes(response.data.offertes);
   });
-
-  const handleFocus = (text) => {
-    axios
-      .post("test.json", {
-        notes: text,
-      })
-      .then(function (response) {
-        setNotes(response.data.notes);
-      });
-  };
 
   // http://dashboard.test/test.json
 
@@ -102,11 +95,10 @@ function Home() {
             </Card>
           </NumbersWrapper>
         </StackedWrapper>
+        <NotesWrapper>
+          <Notes />
+        </NotesWrapper>
       </MainWrapper>
-      <Card>
-        <Offerte offertes={offertes} />
-        <EditableLabel text="Hello!" labelClassName="myLabelClass" inputClassName="myInputClass" inputWidth="200px" inputHeight="25px" inputMaxLength="50" labelFontWeight="bold" inputFontWeight="bold" onFocus={"hai"} onFocusOut={handleFocus} />
-      </Card>
     </>
   );
 }
