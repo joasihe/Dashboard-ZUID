@@ -15,17 +15,20 @@ const CsatMeter = (props) => {
     return CsatScore;
   };
 
+  const dimensions = {
+    height: props.height,
+  };
+
   return (
     <GaugeChart
-      id="gauge-chart5"
+      id='gauge-chart5'
+      style={dimensions}
       nrOfLevels={3}
       arcsLength={[0.2, 0.2, 0.2, 0.2, 0.2]}
       colors={["#f02400", "#fc8f00", "#ffee00", "#aeff00", "#1cdb02"]}
       percent={csatToPercentage(props.csat)}
       arcPadding={0.02}
       formatTextValue={(value) => percentageToCsat(value) + ""}
-      // needleColor={'#FFED00'}
-      // needleBaseColor={'#FFED00'}
       textColor={"#464A4F"}
     />
   );

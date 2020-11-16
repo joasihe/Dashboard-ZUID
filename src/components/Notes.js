@@ -1,28 +1,25 @@
-import React, { Component } from "react";
-import EditableLabel from "react-inline-editing";
+import React, { useState } from "react";
 import Card from "@material-ui/core/Card";
+import TextField from "@material-ui/core/TextField";
 
 const Notes = (props) => {
+  const [value, setValue] = useState("");
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <>
       <Card>
-        <div className="padding-container">
+        <div className={"padding-container"}>
           <h2>Opmerkingen</h2>
-          <EditableLabel
-            text="Vul hier opmerkingen in..."
-            labelClassName="myLabelClass"
-            inputClassName="myInputClass"
-            inputWidth="200px"
-            inputHeight="200px"
-            inputMaxLength="500"
-            labelFontWeight="bold"
-            inputFontWeight="bold"
-            onFocus={() => {
-              console.log("test");
-            }}
-            onFocusOut={() => {
-              console.log("test");
-            }}
+          <TextField
+            id='standard-full-width'
+            fullWidth
+            label=''
+            placeholder='Plaats hier opmerkingen'
+            multiline
+            onChange={handleChange}
           />
         </div>
       </Card>

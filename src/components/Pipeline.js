@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Card } from "@material-ui/core";
 
-const Pipeline = (props) => {
-  const [Bullet, setBullet] = useState("");
-
-  useEffect(() => {
-    let number;
-    number = (props.pipeline / 100) * 70;
-    setBullet(number);
-  });
-
+const Offerte = (props) => {
   return (
-    <div>
-      <h1>Uitstaande offertes: {props.pipeline}</h1>
-      <h1>Slagingspercentage: {Bullet}</h1>
-    </div>
+    <Card>
+      <div className={"padding-container"}>
+        <h2>Offertes:</h2>
+        <div>
+          <h1 className={"number"}>{props.pipeline} offertes</h1>
+        </div>
+      </div>
+    </Card>
   );
 };
 
-export default Pipeline;
+export default Offerte;

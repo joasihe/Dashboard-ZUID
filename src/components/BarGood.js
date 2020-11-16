@@ -6,14 +6,14 @@ const options = {
   plugins: {
     datalabels: {
       color: "#fff",
-      formatter: function(value){
-        return '€' + value;
+      formatter: function (value) {
+        return "€" + value;
       },
       labels: {
         title: {
           font: {
             fontFamily: "BarlowCondensed-SemiBold",
-            size: "40",
+            size: "30",
           },
         },
       },
@@ -45,7 +45,7 @@ const options = {
 };
 
 function VerticalBar() {
-  const [target, setTarget] = useState(12000);
+  const [target, setTarget] = useState(300);
   const [forecast, setForecast] = useState(200);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ function VerticalBar() {
   });
 
   const data = {
-    label: 'in €',
+    label: "in €",
     labels: ["Target", "Forecast"],
     datasets: [
       {
@@ -72,7 +72,7 @@ function VerticalBar() {
       <Card>
         <div className={"padding-container"}>
           <h2>Target vs Forecast</h2>
-          <Bar data={data} options={options} width={50} height={30} />
+          <Bar data={data} options={options} width={80} height={57} />
         </div>
       </Card>
     </>

@@ -57,7 +57,7 @@ function PieChart() {
       <Card>
         <div className={"padding-container"}>
           <h2>Productiviteit</h2>
-          <Pie data={data} width={100} height={83} options={options} />
+          <Pie data={data} width={100} height={70} options={options} />
         </div>
       </Card>
     </>

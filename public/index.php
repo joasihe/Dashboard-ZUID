@@ -45,28 +45,6 @@
         <input type="text" name="offertes[]" id="offertes-input" />
         <label>Offerte 1</label>
     </div>
-    <div>
-        <input type="text" name="offertes[]" id="offertes-input" />
-        <label>Offerte 2</label>
-    </div>
     <input type="submit">
 </form>
-<button class='btn' onclick="add_field()">Offerte toevoegen</button>
 
-<script type=text/javascript>
-           function add_field(){
-
-                var x = document.getElementById("form");
-
-                var new_field = document.createElement("input");
-
-                new_field.setAttribute("type", "text");
-
-                new_field.setAttribute("offertes", "offertes[]");
-
-                var pos = x.childElementCount;
-
-
-                x.insertBefore(new_field, x.childNodes[pos]);
-            }
-</script>
